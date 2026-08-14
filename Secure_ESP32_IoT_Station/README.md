@@ -1,6 +1,6 @@
 Secure ESP32 IoT Station
 
-<img width="707" height="505" alt="image" src="https://github.com/user-attachments/assets/86c923dd-2cb7-422b-84ea-b51bde935f75" />
+<img width="350" height="250" alt="image" src="https://github.com/user-attachments/assets/86c923dd-2cb7-422b-84ea-b51bde935f75" />
 
 ```text
                   Wi-Fi Network
