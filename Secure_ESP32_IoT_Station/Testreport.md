@@ -4,6 +4,24 @@
 
 In the DB, the passwords are saved in hash values. When the login request is recieved, the corresponding hash values are used to compare with the entered password.
 
+When the login succeeds, the user can see the control page as below.
+
+<img width="600" height="250" alt="Control" src="https://github.com/user-attachments/assets/0cf77edc-7d94-42b5-8878-a1e72cb603b9" />
+
+
+By clicking the On button, the user can access the control of the LED (Infrastructure).
+
+<img width="350" height="250" alt="image" src="https://github.com/user-attachments/assets/b0853adc-703f-4dc4-9fff-9e6c46841deb" />
+
+When the LED is On, the control page looks like the below.
+
+<img width="600" height="250" alt="Control2" src="https://github.com/user-attachments/assets/778fd89a-fefa-4c11-9d6a-0473c7a8536a" />
+
+When the user put the wrong password, Login failure page will be loaded.
+
+<img width="600" height="350" alt="Loginfail" src="https://github.com/user-attachments/assets/2decc697-4236-4f90-b14d-1c7ffa780fbf" />
+
+
 
 **Feature 2. Failed login protection**
 
