@@ -18,18 +18,18 @@ Secure ESP32 IoT Station
 
 ```
 
-**Feature 1. Secure Authentication**
+**Feature 1. Secure Authentication**  
 Login passwords are saved in the server as hashwalues.
 When a login is requested, ESP32 is checking the user database to get the hash value of the corresponding password.
 When the entered password is correct then Access is allowed.
 When not, Access is not allowed.
 All login attemps are recorded in the log database.
 
-**Feature 2. Failed login protection**
+**Feature 2. Failed login protection**  
 In order to prevent login Brute-Force attacks, login is not available for 1 minute when the login attemps are failed 3 times.
 
-**Feature 3. Encrypted communication**
+**Feature 3. Encrypted communication**  
 With TLS, the message is encrypted to prevent Man in the Middle Attacks.
 
-**Feature 4. Logging system**
+**Feature 4. Logging system**  
 All interactions are logged with the client IP adddress. ex: login attemps, commands, logout
