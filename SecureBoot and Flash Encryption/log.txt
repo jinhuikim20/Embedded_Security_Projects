@@ -1,1 +1,87 @@
 
+(venv) PS D:\esp32-projects\secureboot-flashencrypted> idf.py -p COM7 monitor
+Executing action: monitor
+Running idf_monitor in directory D:\esp32-projects\secureboot-flashencrypted
+Executing "C:\Espressif\tools\python\v6.0.2\venv\Scripts\python.exe C:\esp\v6.0.2\esp-idf\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c3 --revision 3 --decode-panic backtrace D:\esp32-projects\secureboot-flashencrypted\build\secureboot-flashencrypted.elf D:\esp32-projects\secureboot-flashencrypted\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.0.2\venv\Scripts\python.exe' 'C:\esp\v6.0.2\esp-idf\tools\idf.py' '-p' 'COM7'"...
+--- Warning: GDB cannot open serial ports accessed as COMx
+--- Using \\.\COM7 instead...
+--- esp-idf-monitor 1.9.0 on \\.\COM7 115200
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H
+ESP-ROM:esp32c3-eco7-20230720
+Build:Jul 20 2023
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xd (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40383504
+--- 0x40383504: rv_utils_wait_for_intr at C:/esp/v6.0.2/esp-idf/components/riscv/include/riscv/rv_utils.h:84
+--- (inlined by) esp_cpu_wait_for_intr at C:/esp/v6.0.2/esp-idf/components/esp_hw_support/cpu.c:62
+SPIWP:0xee
+mode:DIO, clock div:1
+Valid secure boot key blocks: 0
+secure boot verification succeeded
+load:0x3fcd5990,len:0x35d8
+load:0x403cbf10,len:0xce0
+--- 0x403cbf10: esp_bootloader_get_description at C:/esp/v6.0.2/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c:40
+load:0x403ce710,len:0x5e50
+--- 0x403ce710: is_xmc_chip_strict at C:/esp/v6.0.2/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash.c:925
+entry 0x403cbf1a
+--- 0x403cbf1a: call_start_cpu0 at C:/esp/v6.0.2/esp-idf/components/bootloader/subproject/main/bootloader_start.c:27
+I (73) boot: ESP-IDF v6.0.2 2nd stage bootloader
+I (73) boot: compile time Aug 29 2026 16:50:35
+I (73) boot: chip revision: v1.1
+I (73) boot: efuse block revision: v1.3
+I (76) boot.esp32c3: SPI Speed      : 80MHz
+I (80) boot.esp32c3: SPI Mode       : DIO
+I (84) boot.esp32c3: SPI Flash Size : 2MB
+I (88) boot: Enabling RNG early entropy source...
+I (92) boot: Partition Table:
+I (95) boot: ## Label            Usage          Type ST Offset   Length
+I (101) boot:  0 nvs              WiFi data        01 02 00011000 00006000
+I (108) boot:  1 phy_init         RF data          01 01 00017000 00001000
+I (114) boot:  2 factory          factory app      00 00 00020000 00100000
+I (121) boot: End of partition table
+I (124) esp_image: segment 0: paddr=00020020 vaddr=3c020020 size=0b248h ( 45640) map
+I (140) esp_image: segment 1: paddr=0002b270 vaddr=3fc8a800 size=01b2ch (  6956) load
+I (142) esp_image: segment 2: paddr=0002cda4 vaddr=40380000 size=03274h ( 12916) load
+I (149) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=178b8h ( 96440) map
+I (172) esp_image: segment 4: paddr=000478e0 vaddr=40383274 size=07498h ( 29848) load
+I (178) esp_image: segment 5: paddr=0004ed80 vaddr=50000000 size=00024h (    36) load
+I (178) esp_image: segment 6: paddr=0004edac vaddr=00000000 size=01224h (  4644) 
+I (184) esp_image: Verifying image signature...
+I (187) secure_boot_v2: Verifying with RSA-PSS...
+I (194) secure_boot_v2: Signature verified successfully!
+I (199) boot: Loaded app from partition at offset 0x20000
+I (201) secure_boot_v2: enabling secure boot v2...
+I (206) secure_boot_v2: secure boot v2 is already enabled, continuing..
+I (212) boot: Checking flash encryption...
+I (216) flash_encrypt: flash encryption is enabled (1 plaintext flashes left)
+I (223) boot: Disabling RNG early entropy source...
+I (239) cpu_start: Unicore app
+I (247) cpu_start: GPIO 20 and 21 are used as console UART I/O pins
+I (248) cpu_start: Pro cpu start user code
+I (248) cpu_start: cpu freq: 160000000 Hz
+I (250) app_init: Application information:
+I (253) app_init: Project name:     secureboot-flashencrypted
+I (259) app_init: App version:      1
+I (262) app_init: Compile time:     Aug 29 2026 16:50:20
+I (267) app_init: ELF file SHA256:  23de14be2...
+I (272) app_init: ESP-IDF:          v6.0.2
+I (275) efuse_init: Min chip rev:     v0.3
+I (279) efuse_init: Max chip rev:     v1.99 
+I (283) efuse_init: Chip rev:         v1.1
+I (287) heap_init: Initializing. RAM available for dynamic allocation:
+I (293) heap_init: At 3FC8D470 len 00032B90 (202 KiB): RAM
+I (299) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM
+I (305) heap_init: At 3FCDC710 len 0000294C (10 KiB): Retention RAM
+I (311) heap_init: At 50000024 len 00001FC4 (7 KiB): RTCRAM
+I (317) spi_flash: detected chip: generic
+I (320) spi_flash: flash io: dio
+W (323) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (342) sleep_gpio: Configure to isolate all GPIO pins in sleep state
+I (347) sleep_gpio: Enable automatic switching of GPIO sleep configuration
+I (354) nvs_sec_provider: NVS Encryption - Registering Flash encryption-based scheme...
+W (362) nvs_sec_provider: Partition with subtype "nvs_keys" not found
+I (368) main_task: Started on CPU0
+I (368) main_task: Calling app_main()
+I (368) ESP32-C3: Initialisiere I2C Master Bus...
+I (378) ESP32-C3: Initialisiere SSD1306 Panel IO via I2C...
+I (378) ESP32-C3: Installiere SSD1306 Treiber-Panel...
+I (488) ESP32-C3: Starte Endlosschleife...
