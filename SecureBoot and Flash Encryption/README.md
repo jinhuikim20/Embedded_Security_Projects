@@ -1,5 +1,5 @@
 In Embedded Cybersecurity, Secureboot and Flash encryption are playing important roles to keep the integrity and confidentiality of the FW.
-Secureboot can ensure only properly signed FW can be loaded on the system. --> Integrity
+Secureboot can ensure only properly signed FW can be loaded on the system. --> Integrity  
 Flash encryption can ensure that intruders cannot read out the content of the FW --> Confidentiality
 
 For these functions ESP32 supports eFuse, which once burned, cannot return to the previous state. 
